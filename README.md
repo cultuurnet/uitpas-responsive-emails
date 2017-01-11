@@ -10,7 +10,7 @@ UiTPAS responsive emails working copy.
 **Workflow for the creation of a new template**
 
 1. Change the copy in the section "HTML Visually Hidden Preheader Text". 
-This section is displayed as a preview in some mailclients. You wil typically insert subject line copy in here, or a one sentence summarizing of the email's content.
+This section is displayed as a preview in some mailclients. You wil typically insert subject line copy in here, or a one sentence summary of the email's content.
 
 2. Change the path to the logo. 
 Logo's and other visuals need to be hosted on *assets.uitpas.be*
