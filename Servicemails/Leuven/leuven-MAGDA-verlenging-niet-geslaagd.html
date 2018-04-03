@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name=”x-apple-disable-message-reformatting”>  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title>UiTPAS Leuven</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 9 - 26 can be safely removed. -->
+    
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+        <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+    
+    <!-- CSS Reset -->
+    <style>
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+        
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin:0 !important;
+        }
+        
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+                
+        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+        table table table {
+            table-layout: auto; 
+        }
+        
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+        
+        /* What it does: A work-around for iOS meddling in triggered links. */
+        .mobile-link--footer a,
+        a[x-apple-data-detectors] {
+            color:inherit !important;
+            text-decoration: underline !important;
+        }
+        
+        /* What it does: Prevents underlining the button text in Windows 10 */
+        .button-link {
+            text-decoration: none !important;
+        }
+      
+    </style>
+    
+    <!-- Progressive Enhancements -->
+    <style>
+        
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+        .button-td:hover,
+        .button-a:hover {
+            background: #162169 !important;
+            border-color: #162169 !important;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 480px) {
+
+            /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+            .fluid,
+            .fluid-centered {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            /* And center justify these ones. */
+            .fluid-centered {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+        
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+                
+        }
+
+    </style>
+
+</head>
+<body width="100%" bgcolor="#0398a6" style="margin: 0;">
+    <center style="width: 100%; background: #0398a6;">
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;">
+             We hebben je UiTPAS niet automatisch kunnen verlengen voor het komend jaar.
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!--    
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.  
+        -->
+        <div style="max-width: 680px; margin: auto;">
+            <!--[if mso]>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" align="center">
+            <tr>
+            <td>
+            <![endif]-->
+
+            <!-- Email Header : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px;">
+                <tr>
+                    <td style="padding: 20px 0; text-align: center;">
+                        <img src="http://assets.uitpas.be/servicemails/uitpas-leuven-logo-154.png" width="222" height="69" alt="UiTPAS Leuven" border="0" style="background: #0398a6; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #0398a6">
+                    </td>
+                </tr>
+            </table>
+            <!-- Email Header : END -->
+            
+            <!-- Email Body : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px;">
+
+                <!-- 1 Column Text + Button : BEGIN -->
+                <tr>
+                    <td bgcolor="#ffffff">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td style="padding: 40px; text-align: left; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555;">
+
+                                    Hallo $!passHolder.firstName
+                                    <br><br>
+
+                                    We hebben je UiTPAS niet automatisch kunnen verlengen voor het komend jaar. Dit hoeft niet te betekenen dat je geen recht meer hebt op het kansentarief. Om te weten of je toch nog in aanmerking komt voor het kansentarief kan je de voorwaarden nakijken. Zo mis je ook het komende jaar geen kortingen voor vrijetijdsactiviteiten.
+                                    <br><br>
+
+                                    Heb je toch nog recht? Kom met je UiTPAS en de nodige documenten naar een van de verkooppunten. Kom je niet meer in aanmerking? Dan kan je je UiTPAS daar laten omwisselen zodat je kan blijven sparen en ruilen.
+                                    <br><br> 
+
+                                    Alle informatie  over de voorwaarden en verkooppunten van de UiTPAS aan kansentarief vind je <a href="https://www.uitinleuven.be/uitpas-in-leuven?utm_source=uitpas-leuven&utm_medium=email&utm_content=magda-kansenstatuut-niet-verlengd&utm_campaign=service-mails" style="color: #0398a6;">hier</a>.
+                                    <br><br>
+
+                                    Heb je nog vragen? Mail dan naar <a href="uitpas@leuven.be" style="color: #0398a6;">uitpas@leuven.be</a> of bel 016/27.22.88.
+                                    <br><br>
+
+                                    Veel plezier en tot snel!
+                                    <br><br>
+
+                                    Het UiTPAS-team
+                                    <br><br>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text + Button : END -->
+
+            </table>
+            <!-- Email Body : END -->  
+
+            <!-- Email Footer : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px;">
+                <tr>
+                    <td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: sans-serif; mso-height-rule: exactly; line-height:18px; text-align: center; color: #ffffff;">
+      
+                        <!-- Webversion : BEGIN 
+                        <webversion style="color: #ffffff; text-decoration:underline; font-weight: bold;"><a href="" style="color: #ffffff;">Bekijk de online versie</a></webversion><br><br>
+                        Webversion : END -->
+
+                        <!-- Disclaimer : BEGIN
+                        <span class="mobile-link--footer">Door het gebruik van UiTPAS  ga je akkoord met de <a href="#" style="color: #ffffff;">gebruiksvoorwaarden</a> en <a href="#" style="color: #ffffff;">privacyverklaring</a>.</span><br><br>
+                        Disclaimer : END -->
+
+                        Heb je vragen of opmerkingen? We helpen je graag verder op <a href="mailto:uitpas@leuven.be" style="color: #ffffff;">uitpas@leuven.be</a>
+                        <br><br>
+
+                        <a href="http://www.uitinleuven.be/uitpas?utm_source=uitpas-leuven&utm_medium=email&utm_content=magda-kansenstatuut-niet-verlengd&utm_campaign=service-mails" style="color: #ffffff;">uitinleuven.be</a>
+                        <br><br>
+
+                        <!-- Contact Information : BEGIN 
+                        <br><span class="mobile-link--footer">Straatnaam 1, 1234 Gemeente</span><br><span class="mobile-link--footer">123 456, <a href="">info@domein.be</a></span><br><br>
+                        Contact Information : END -->
+                        
+                        <unsubscribe style="color: #ffffff; text-decoration:underline;"><a href="$unsubscribeLink" style="color: #ffffff;">Uitschrijven</a></unsubscribe>
+                    </td>
+                </tr>
+            </table>
+            <!-- Email Footer : END -->       
+
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+    </center>
+</body>
+</html>
